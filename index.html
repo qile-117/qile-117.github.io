@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to the album</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: url('主页面.jpg') no-repeat center center;
+      background-size: contain;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .click-zone {
+      position: absolute;
+      cursor: pointer;
+      /* 背景透明，可视点击区域 */
+      background-color: rgba(255, 255, 255, 0);
+    }
+
+    /* 按钮区域位置调整，以下是估算值，可根据需要微调 */
+    #intro-btn {
+      top: 70%;
+      left: 23%;
+      width: 150px;
+      height: 80px;
+    }
+
+    #test-btn {
+      top: 70%;
+      left: 45%;
+      width: 150px;
+      height: 80px;
+    }
+
+    #manifesto-btn {
+      top: 70%;
+      left: 67%;
+      width: 150px;
+      height: 80px;
+    }
+  </style>
+</head>
+<body>
+  <a href="introduction.html" class="click-zone" id="intro-btn"></a>
+  <a href="test.html" class="click-zone" id="test-btn"></a>
+  <a href="manifesto.html" class="click-zone" id="manifesto-btn"></a>
+</body>
+</html>

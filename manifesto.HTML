@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Manifesto</title>
+    <style>
+        /* 基础样式 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Tahoma', Arial, sans-serif;
+            color: #000; /* 所有文字强制黑色 */
+            min-height: 100vh;
+            position: relative;
+            background: url('manifesto-bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        /* 主容器 */
+        .manifesto-container {
+            display: flex;
+            flex-direction: column;
+            max-width: 1200px;
+            margin: 60px auto;
+            position: relative;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* 标题区域 */
+        .title-section {
+            text-align: center;
+            margin-bottom: 50px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 0 0 30px 0;
+            letter-spacing: 2px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards 0.3s;
+            text-transform: none;
+            color: #000; /* 强制黑色 */
+        }
+
+        /* 内容容器 */
+        .content-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            gap: 100px;
+        }
+
+        /* 内容区块 */
+        .content-block {
+            flex: 1;
+            max-width: 500px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.85); /* 白色半透明背景确保黑色文字可读 */
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: normal;
+            margin: 0 0 30px 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+            color: #000; /* 强制黑色 */
+        }
+
+        /* 内容样式 */
+        .manifesto-content {
+            line-height: 1.8;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin: 0 0 15px 0;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeInUp 0.8s forwards;
+            color: #000; /* 强制黑色 */
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 返回按钮 */
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 18px;
+            background: rgba(255,255,255,0.9);
+            color: #000; /* 强制黑色 */
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards 3s;
+            transition: all 0.3s ease;
+            z-index: 100;
+            border: 1px solid #000; /* 添加黑色边框 */
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .content-container {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .content-block {
+                max-width: 100%;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-btn">← Back</a>
+    
+    <div class="manifesto-container">
+        <div class="title-section">
+            <h1>Manifesto</h1>
+        </div>
+        
+        <div class="content-container">
+            <!-- Good Image 区块 -->
+            <div class="content-block">
+                <h2>Good image</h2>
+                <div class="manifesto-content">
+                    <p>High quality, high resolution</p>
+                    <p>Algorithmically enhanced</p>
+                    <p>Composed according to aesthetic conventions</p>
+                    <p>Well-lit</p>
+                    <p>Subjects are always front-facing</p>
+                    <p>Free of clutter or distracting objects</p>
+                    <p>No one is blinking in group photos</p>
+                    <p>Smiling</p>
+                    <p>No prohibited or inappropriate items within the frame</p>
+                    <p>No motion blur</p>
+                    <p>Clean camera lens</p>
+                    <p>Taken at recognizable landmarks</p>
+                    <p>Higher degree of skin exposure</p>
+                    <p>More sexually appealing</p>
+                    <p>Anthropocentric in focus</p>
+                    <p>Easy to identify</p>
+                    <p>Easy to categorize</p>
+                </div>
+            </div>
+            
+            <!-- Poor Image 区块 -->
+            <div class="content-block">
+                <h2>Poor image</h2>
+                <div class="manifesto-content">
+                    <p>All that fails to meet the standards of good image</p>
+                    <p>Captured in haste, by accident, or without purpose</p>
+                    <p>Blurry, dark, overexposed, or underexposed</p>
+                    <p>Offline, untagged, and untracked</p>
+                    <p>Cropped, compressed, corrupted, pixelated</p>
+                    <p>Raw and unprocessed</p>
+                    <p>Natural</p>
+                    <p>Real and unperformed</p>
+                    <p>Difficult to classify and recognize</p>
+                    <p>Nonhuman photography</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 自动设置动画延迟
+        document.addEventListener('DOMContentLoaded', function() {
+            const items = document.querySelectorAll('.manifesto-content p');
+            
+            // Good Image 动画
+            document.querySelectorAll('.content-block:nth-child(1) p').forEach((item, index) => {
+                item.style.animationDelay = (1.0 + index * 0.1) + 's';
+            });
+            
+            // Poor Image 动画
+            document.querySelectorAll('.content-block:nth-child(2) p').forEach((item, index) => {
+                item.style.animationDelay = (1.2 + index * 0.1) + 's';
+            });
+        });
+    </script>
+</body>
+</html>
